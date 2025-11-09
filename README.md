@@ -31,7 +31,7 @@ A step-by-step series of examples that tell you how to get a development environ
 1.  **Clone the repository:**
 
     ```bash
-    git clone https://github.com/your-username/quote_builder_app.git
+    git clone  https://github.com/aasimahmad2048/quote_builder_app.git
     cd quote_builder_app
     ```
 
