@@ -26,6 +26,14 @@ class _BusinessDetailScreenState extends ConsumerState<BusinessDetailScreen> {
 
     return Scaffold(
       appBar: AppBar(
+       centerTitle: true,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back_ios),
+          onPressed: () => Navigator.pop(context),
+        ),
+        automaticallyImplyLeading: false,
+
+        
         title: Text(business?.name ?? 'Business Details'),
         backgroundColor: const Color.fromARGB(255, 179, 58, 58),
         foregroundColor: Colors.white,
@@ -46,11 +54,7 @@ class _BusinessDetailScreenState extends ConsumerState<BusinessDetailScreen> {
 
   Widget _buildErrorScreen(String message) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Business Details'),
-        backgroundColor: const Color.fromARGB(255, 179, 58, 58),
-        foregroundColor: Colors.white,
-      ),
+      
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

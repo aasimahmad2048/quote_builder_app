@@ -14,13 +14,28 @@ class QuoteDetailScreen extends ConsumerWidget {
 
     if (quote == null) {
       return Scaffold(
-        appBar: AppBar(title: const Text('Quote Details')),
+        appBar: AppBar(
+          centerTitle: true,
+          leading: IconButton(
+            icon: const Icon(Icons.arrow_back_ios),
+            onPressed: () => Navigator.pop(context),
+          ),
+          automaticallyImplyLeading: false,
+          title: const Text('Quote Details'),
+        ),
         body: const Center(child: Text('Quote not found.')),
       );
     }
 
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back_ios),
+          onPressed: () => Navigator.pop(context),
+        ),
+        automaticallyImplyLeading: false,
+
         title: Text(quote.title.isNotEmpty ? quote.title : 'Quote Details'),
       ),
       body: SingleChildScrollView(

@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'terms_provider.dart';
@@ -17,7 +16,15 @@ class _TermsDetailScreenState extends ConsumerState<TermsDetailScreen> {
     final term = ref.watch(termsProvider.notifier).getTermById(widget.termId);
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Term Detail')),
+      appBar: AppBar(
+        centerTitle: true,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back_ios),
+          onPressed: () => Navigator.pop(context),
+        ),
+        automaticallyImplyLeading: false,
+        title: const Text('Term Detail'),
+      ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: term == null

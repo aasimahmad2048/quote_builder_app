@@ -21,6 +21,9 @@ class HomeScreen extends ConsumerWidget {
 
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
+
+        automaticallyImplyLeading: false,
         title: const Text('Quotation Builder'),
         actions: [
           IconButton(
@@ -38,6 +41,12 @@ class HomeScreen extends ConsumerWidget {
               // Navigator.pushNamed(context, RouteNames.appSettings);
             },
           ),
+          IconButton(
+            icon: const Icon(Icons.info_outline),
+            onPressed: () {
+              Navigator.pushNamed(context, RouteNames.errorScreen);
+            },
+          ),
         ],
       ),
       body: SingleChildScrollView(
@@ -46,7 +55,7 @@ class HomeScreen extends ConsumerWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             _buildCard(
-              title: 'Create New Quote',
+              title: 'Create New Quotation',
               icon: Icons.add_box,
               color: Colors.blue,
               onTap: () {
@@ -56,7 +65,7 @@ class HomeScreen extends ConsumerWidget {
             const SizedBox(height: 20),
             _buildSectionHeader('Management'),
             _buildCard(
-              title: 'Manage Quotes',
+              title: 'Manage Quotations',
               icon: Icons.receipt_long,
               color: Colors.deepPurple,
               count: quoteCount,
@@ -109,7 +118,10 @@ class HomeScreen extends ConsumerWidget {
               onTap: () {
                 ScaffoldMessenger.of(context).showSnackBar(
                   SnackBar(
-                    content: Text("Settings functionality coming soon!"),
+                    content: Text(
+                      "Discover Features functionality coming soon!",
+                    ),
+
                     backgroundColor: Colors.green,
                     behavior: SnackBarBehavior.floating,
                     duration: const Duration(seconds: 3),

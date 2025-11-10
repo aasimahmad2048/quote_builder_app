@@ -29,14 +29,8 @@ class AppInitializer {
     await Hive.openBox<QuoteModel>('quoteBox');
     await Hive.openBox<ClientModel>('ClientBox');
 
-    SplashPrefs.instance?.isLoggedIn == true
+    SplashPrefs.instance?.isLoggedIn == false
         ? await DummyDataSeeder.seedAll()
-        : print("");
-
-    await Hive.box<BusinessModel>('businessBox').compact();
-    await Hive.box<ProductModel>('productBox').compact();
-    await Hive.box<TermsModel>('termsBox').compact();
-    await Hive.box<QuoteModel>('quoteBox').compact();
-    await Hive.box<ClientModel>('ClientBox').compact();
+        : print("Data Already Seeded"); 
   }
 }

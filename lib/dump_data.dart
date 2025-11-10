@@ -143,6 +143,5 @@ Future<void> main() async {
   print('Seeding database with dummy data...');
   await DummyDataSeeder.seedAll();
   print('Seeding complete!');
-
-  await Hive.close();
+ 
 }

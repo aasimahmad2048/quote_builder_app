@@ -9,6 +9,11 @@ class AppTheme {
     fontFamily: 'Poppins',
     primaryColor: _primaryColor,
     appBarTheme: const AppBarTheme(
+      
+
+iconTheme: const IconThemeData(color: Colors.white),
+
+      
       backgroundColor: Color.fromARGB(255, 179, 58, 58),
       foregroundColor: Colors.white,
       centerTitle: true,

@@ -48,6 +48,7 @@ class _CreateQuoteScreenState extends ConsumerState<CreateQuoteScreen> {
           onPressed: () => Navigator.pop(context),
         ),
         automaticallyImplyLeading: false,
+
         title: const Text("New Quotation"),
       ),
       body: SingleChildScrollView(
@@ -133,7 +134,7 @@ class _CreateQuoteScreenState extends ConsumerState<CreateQuoteScreen> {
             AppTextFormField(
               hintText: "Enter Quotation Number",
               controller: quoteNumber,
-              labelText: 'Quote Number',
+              labelText: 'Quotation Number',
             ),
           ],
         ),
@@ -156,10 +157,10 @@ class _CreateQuoteScreenState extends ConsumerState<CreateQuoteScreen> {
             const SizedBox(height: 8),
             AppTextFormField(
               hintText: "Enter Quotation Title",
-              labelText: 'Quote Title',
+              labelText: 'Quotation Title',
               validator: (value) {
                 if (value == null || value.isEmpty) {
-                  return 'Quote Title cannot be empty';
+                  return 'Quotation Title cannot be empty';
                 }
                 return null;
               },

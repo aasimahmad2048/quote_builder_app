@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quote_builder_app_meru_technosoft_pvt_ltd/presentation/features/quote/quote_detail_screen.dart';
+import 'package:quote_builder_app_meru_technosoft_pvt_ltd/presentation/widgets/error_screen.dart';
 
 import '../../data/models/business_model.dart';
 import '../../data/models/product_model.dart';
@@ -177,11 +178,15 @@ class AppRouter {
           builder: (_) => QuoteDetailScreen(quoteId: quoteId),
           settings: settings,
         );
-      default:
+
+      case RouteNames.errorScreen:
         return MaterialPageRoute(
-          builder: (_) =>
-              const Scaffold(body: Center(child: Text('404 - Page Not Found'))),
+          builder: (_) => ErrorScreen(),
+          settings: settings,
         );
+
+      default:
+        return MaterialPageRoute(builder: (_) => ErrorScreen());
     }
   }
 }

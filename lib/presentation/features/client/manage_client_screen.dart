@@ -17,6 +17,12 @@ class _ManageClientScreenState extends ConsumerState<ManageClientScreen> {
     final clientList = ref.watch(clientProvider);
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back_ios),
+          onPressed: () => Navigator.pop(context),
+        ),
+        automaticallyImplyLeading: false,
         title: const Text('Manage Clients'),
         backgroundColor: const Color.fromARGB(255, 179, 58, 58),
         foregroundColor: Colors.white,

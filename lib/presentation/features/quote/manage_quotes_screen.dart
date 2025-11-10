@@ -53,7 +53,7 @@ class ManageQuotesScreen extends ConsumerWidget {
                     child: AppButton(
                       onPressed: () =>
                           Navigator.pushNamed(context, RouteNames.createQuote),
-                      child: const Text("Create New Quote"),
+                      child: const Text("Create New Quotation"),
                     ),
                   ),
                 ],
@@ -174,7 +174,7 @@ class ManageQuotesScreen extends ConsumerWidget {
           ? FloatingActionButton.extended(
               onPressed: () =>
                   Navigator.pushNamed(context, RouteNames.createQuote),
-              label: const Text("New Quote"),
+              label: const Text("New Quotation"),
               icon: const Icon(Icons.add),
             )
           : null,

@@ -37,6 +37,5 @@ class RouteNames {
   static const String productDetail = '/productDetail';
   static const String termsDetail = '/termsDetail';
   static const String quoteDetail = '/quoteDetail';
-  
-   
+  static const String errorScreen = "/errorScreen";
 }

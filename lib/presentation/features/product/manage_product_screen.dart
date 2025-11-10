@@ -20,6 +20,12 @@ class _ManageProductScreenState extends ConsumerState<ManageProductScreen> {
 
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back_ios),
+          onPressed: () => Navigator.pop(context),
+        ),
+        automaticallyImplyLeading: false,
         title: const Text('Manage Products'),
         backgroundColor: const Color.fromARGB(255, 179, 58, 58),
         foregroundColor: Colors.white,
@@ -109,12 +115,12 @@ class _ManageProductScreenState extends ConsumerState<ManageProductScreen> {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           _buildSummaryItem(
-            icon: Icons.inventory_2,
+            icon: Icons.inventory_2_outlined,
             value: totalProducts.toString(),
             label: 'Total Products',
           ),
           _buildSummaryItem(
-            icon: Icons.attach_money,
+            icon: Icons.money_outlined,
             value: '₹${totalValue.toStringAsFixed(2)}',
             label: 'Total Value',
           ),
